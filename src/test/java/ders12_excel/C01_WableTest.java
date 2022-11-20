@@ -58,7 +58,6 @@ public class C01_WableTest extends TestBase {
         for (int i = 0; i < dataElementleriListesi.size(); i++) {
             if (dataElementleriListesi.get(i).getText().equalsIgnoreCase("Kierra")){
                 System.out.println("Kierra'nin maasi : "+ dataElementleriListesi.get(i+4).getText());
-
             }
         }
         //10. class icerisinde bir method olusturun,
