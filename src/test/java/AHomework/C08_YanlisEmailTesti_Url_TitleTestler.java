@@ -64,7 +64,5 @@ public class C08_YanlisEmailTesti_Url_TitleTestler extends TestBase {
         // ○ logoTest => BestBuy logosunun görüntülendigini test edin
         WebElement bestBuyLogo=driver.findElement(By.xpath("//img[@class='logo']"));
         Assert.assertTrue(bestBuyLogo.isDisplayed());
-
-
     }
 }
