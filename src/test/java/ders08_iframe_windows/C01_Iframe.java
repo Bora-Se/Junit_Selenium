@@ -37,13 +37,15 @@ public class C01_Iframe {
 
         //● https://the-internet.herokuapp.com/iframe adresine gidin.
         driver.get("https://the-internet.herokuapp.com");
+
         //● Bir metod olusturun: iframeTest
         //○ “An IFrame containing….” textinin erisilebilir oldugunu test edin
-
         WebElement anIframeYaziElementi= driver.findElement(By.tagName("h3"));
         Assert.assertTrue(anIframeYaziElementi.isEnabled());
+
         // ve  konsolda  yazdirin.
         System.out.println(anIframeYaziElementi.getText());
+
         // ○ Text Box’a “Merhaba Dunya!” yazin.
         //Ulasmak istediginiz webelement bir iframe icerisinde ise, driver o elemente direk ulasamazz.
         // once webelementin icinde oldugu iframe gecmeliyiz ve orayi locate etmeliyiz.
@@ -53,7 +55,6 @@ public class C01_Iframe {
 
         WebElement iframeElementi= driver.findElement(By.xpath("//iframe[@id='mce_0_ifr']"));
         driver.switchTo().frame(iframeElementi);
-
 
         WebElement yaziAlaniElementi= driver.findElement(By.xpath("//body[@id='tinymce']"));
         yaziAlaniElementi.clear();
@@ -68,15 +69,12 @@ public class C01_Iframe {
 
          switchTo( ) . defaultContent() ==> ana sayfaya gecer
          switchTo( ) . parentFrame() ==> ic ice birden fazla iframe varsa
-                                         bulundugu iframe'in bir ust iframe'ine cikar
-         */
+                                         bulundugu iframe'in bir ust iframe'ine cikar   */
 
         driver.switchTo().defaultContent();
         WebElement elementalSeleniumLink= driver.findElement(By.linkText("Elemental Selenium"));
         Assert.assertTrue(elementalSeleniumLink.isEnabled());
-
         System.out.println(elementalSeleniumLink.getText());
-
         Thread.sleep(5000);
     }
 
@@ -84,5 +82,4 @@ public class C01_Iframe {
     public void teardown(){
         driver.close();
     }
-
 }

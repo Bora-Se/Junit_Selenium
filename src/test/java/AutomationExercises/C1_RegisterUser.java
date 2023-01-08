@@ -17,11 +17,12 @@ public class C1_RegisterUser extends TestBase {
         //1. Launch browser
         //2. Navigate to url 'http://automationexercise.com'
         driver.navigate().to("http://automationexercise.com");
+
         //3. Verify that home page is visible successfully  -- .getText(); yapamadi (//a[@href='/'])[2]
         WebElement homePage= driver.findElement(By.xpath("(//a[@href='/'])[2]"));
         Assert.assertTrue(homePage.isDisplayed());
         //System.out.println(driver.findElement(By.xpath("\"(//a[@href=\\\"/\\\"])[2]\"")).getText()); --bulamadi
-        /*String expectedHomePageText= "home page";
+        /* String expectedHomePageText= "home page";
         String actuelHomePageText= driver.findElement(By.xpath("\"(//a[@href=\\\"/\\\"])[2]\"")).getText();
         System.out.println(actuelHomePageText);
         Assert.assertTrue(actuelHomePageText.contains(expectedHomePageText));          */

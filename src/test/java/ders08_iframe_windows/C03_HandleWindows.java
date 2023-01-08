@@ -13,7 +13,6 @@ import java.time.Duration;
 
 public class C03_HandleWindows {
 
-
     WebDriver driver;
     @Before
     public void setup(){
@@ -26,12 +25,13 @@ public class C03_HandleWindows {
     public void windowTesti(){
         //● Amazon anasayfa adresine gidin.
         driver.get("https://www.amazon.com");
+
         //● Sayfa’nin window handle degerini String bir degiskene atayin
         String ilkSayfahandleDegeri= driver.getWindowHandle();
+
         //● Sayfa title’nin “Amazon” icerdigini test edin
         String expectedIcerik="Amazon";
         String actualTitle=driver.getTitle();
-
         Assert.assertTrue(actualTitle.contains(expectedIcerik));
 
         //● Yeni bir tab olusturup, acilan tab’da wisequarter.com adresine gidin
@@ -42,7 +42,6 @@ public class C03_HandleWindows {
         expectedIcerik="Wise Quarter";
         actualTitle= driver.getTitle();
         Assert.assertTrue(actualTitle.contains(expectedIcerik));
-
         System.out.println(driver.getTitle());
 
         //● Yeni bir window olusturup, acilan sayfada walmart.com adresine gidin
@@ -54,13 +53,10 @@ public class C03_HandleWindows {
         Assert.assertTrue(actualTitle.contains(expectedIcerik));
 
         //● Ilk acilan sayfaya donun ve amazon sayfasina dondugunuzu test edin
-
         driver.switchTo().window(ilkSayfahandleDegeri);
-
         expectedIcerik="Amazon";
         actualTitle= driver.getTitle();
         Assert.assertTrue(actualTitle.contains(expectedIcerik));
-
 
     }
 
