@@ -146,9 +146,6 @@ public class C1_RegisterUser extends TestBase {
         String actualMessage2=deleted.getText();
         Assert.assertEquals(expectedMessage2,actualMessage2);*/
 
-
-
-
     }
 
 
